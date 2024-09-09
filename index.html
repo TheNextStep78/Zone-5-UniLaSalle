@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès au Serveur</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://cdn.helloasso.com/img/photos/croppedimage-904f286148ac48cabe36541b2feb0d78.png" alt="Logo" id="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html?page=test" onclick="showSection('test')">À propos</a></li>
+                    <li><a href="index.html?page=documents" onclick="showSection('documents')">Documents</a></li>
+                    <li><a href="index.html?page=contact" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="homeSection">
+            <h1>Accéder au Serveur de la Zone 5</h1>
+            <p>Cliquez sur le bouton ci-dessous pour accéder au répertoire de documents de la zone 5 :</p>
+            <button id="accessButton">Accéder au Répertoire</button>
+        </section>
+        <section id="testSection" class="hidden">
+    <h2>À propos</h2>
+    <p>Bienvenue sur notre site web !</p>
+    <p><strong>Créateurs du site :</strong> Max et Kylian</p>
+    <p><strong>Outils utilisés pour le développement :</strong> Ce site a été créé en utilisant Notepad++, un éditeur de texte puissant et flexible, idéal pour le développement HTML et CSS.</p>
+    <p><strong>Technologies :</strong> Le site utilise des technologies web standard telles que HTML5 et CSS3 pour offrir une expérience utilisateur fluide et moderne. Aucune bibliothèque ou framework JavaScript n'a été utilisé dans ce projet.</p>
+    <p>Nous espérons que vous trouverez toutes les informations dont vous avez besoin et que vous apprécierez votre visite !</p>
+
+        </section>
+        <section id="contactSection" class="hidden">
+            <h2>Contact</h2>
+            <p><strong>Lieu :</strong> 14 quai de la Somme, Amiens 80000</p>
+            <p><strong>Numéro du SAV :</strong> 05 13 65 78 45</p>
+            <p><strong>Numéro de la maintenance :</strong> 06 07 56 89 12</p>
+        </section>
+        <section id="documentsSection" class="hidden">
+            <h2>Documents</h2>
+            <button id="maintenanceButton">Maintenance</button>
+            <button id="schemaButton">Schéma électrique</button>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 UniLaSalle Amiens.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = ['homeSection', 'testSection', 'contactSection', 'documentsSection'];
+            sections.forEach(id => {
+                if (id === sectionId) {
+                    document.getElementById(id).classList.remove('hidden');
+                } else {
+                    document.getElementById(id).classList.add('hidden');
+                }
+            });
+        }
+
+        function initPage() {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page');
+            if (page === 'test') {
+                showSection('testSection');
+            } else if (page === 'contact') {
+                showSection('contactSection');
+            } else if (page === 'documents') {
+                showSection('documentsSection');
+            } else {
+                showSection('homeSection');
+            }
+        }
+
+        document.getElementById('accessButton').addEventListener('click', function() {
+            const serverUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252F";
+            window.open(serverUrl, '_blank');
+        });
+
+        document.getElementById('maintenanceButton').addEventListener('click', function() {
+            const maintenanceUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FMaintenance%252F";
+            window.open(maintenanceUrl, '_blank');
+        });
+
+        document.getElementById('schemaButton').addEventListener('click', function() {
+            const schemaUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FSch%25C3%25A9ma%2520%25C3%25A9lectrique%252F";
+            window.open(schemaUrl, '_blank');
+        });
+
+        window.onload = initPage;
+    </script>
+</body>
+</html>
