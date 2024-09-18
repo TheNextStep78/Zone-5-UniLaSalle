@@ -33,13 +33,12 @@
             <button id="accessButton">Accéder au Répertoire</button>
         </section>
         <section id="testSection" class="hidden">
-    <h2>À propos</h2>
-    <p>Bienvenue sur notre site web !</p>
-    <p><strong>Créateurs du site :</strong> ACHHOUD Ayoub, BRODIER Kylia, CADART Ugo et CLEMENCEAU Max</p>
-    <p><strong>Outils utilisés pour le développement :</strong> Ce site a été créé en utilisant Notepad++, un éditeur de texte puissant et flexible, idéal pour le développement HTML et CSS.</p>
-    <p><strong>Technologies :</strong> Le site utilise des technologies web standard telles que HTML5 et CSS3 pour offrir une expérience utilisateur fluide et moderne. Aucune bibliothèque ou framework JavaScript n'a été utilisé dans ce projet.</p>
-    <p>Nous espérons que vous trouverez toutes les informations dont vous avez besoin et que vous apprécierez votre visite !</p>
-
+            <h2>À propos</h2>
+            <p>Bienvenue sur notre site web !</p>
+            <p><strong>Créateurs du site :</strong> ACHHOUD Ayoub, BRODIER Kylia, CADART Ugo et CLEMENCEAU Max</p>
+            <p><strong>Outils utilisés pour le développement :</strong> Ce site a été créé en utilisant Notepad++, un éditeur de texte puissant et flexible, idéal pour le développement HTML et CSS.</p>
+            <p><strong>Technologies :</strong> Le site utilise des technologies web standard telles que HTML5 et CSS3 pour offrir une expérience utilisateur fluide et moderne. Aucune bibliothèque ou framework JavaScript n'a été utilisé dans ce projet.</p>
+            <p>Nous espérons que vous trouverez toutes les informations dont vous avez besoin et que vous apprécierez votre visite !</p>
         </section>
         <section id="contactSection" class="hidden">
             <h2>Contact</h2>
@@ -51,6 +50,8 @@
             <h2>Documents</h2>
             <button id="maintenanceButton">Maintenance</button>
             <button id="schemaButton">Schéma électrique</button>
+            <button id="hmiButton">Programme HMI</button>
+            <button id="modesOperatoiresButton">Modes Opératoires</button> <!-- Nouveau bouton ajouté -->
         </section>
     </main>
     <footer>
@@ -98,6 +99,16 @@
         document.getElementById('schemaButton').addEventListener('click', function() {
             const schemaUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FSch%25C3%25A9ma%2520%25C3%25A9lectrique%252F";
             window.open(schemaUrl, '_blank');
+        });
+
+        document.getElementById('hmiButton').addEventListener('click', function() {
+            const hmiUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FProgramme%2520IHM%252F";
+            window.open(hmiUrl, '_blank');
+        });
+
+        document.getElementById('modesOperatoiresButton').addEventListener('click', function() {
+            const modesOperatoiresUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FModes%2520op%25C3%25A9ratoires%252F";
+            window.open(modesOperatoiresUrl, '_blank');
         });
 
         window.onload = initPage;
