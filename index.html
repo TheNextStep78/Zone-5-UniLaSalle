@@ -33,11 +33,13 @@
             <button id="accessButton">Accéder au Répertoire</button>
             
             <h2>Principe de fonctionnement</h2>
-            <p><strong>Transport des popcorns :</strong> (1) Les popcorns sont transférés de la zone 4 à la zone 5 à l'aide d'un tapis roulant. Ce système assure un déplacement continu grâce à une rampe d'accès inclinée. </p>
-            <p><strong>Stockage temporaire :</strong> (2) Une fois en haut, les popcorns sont dirigés vers un entonnoir servant de zone de stockage temporaire. Cet entonnoir, situé au-dessus de la machine, permet de conserver une quantité précise de popcorns avant leur mise en sac.</p>
+            <p><strong> (1) Transport des popcorns :</strong> Les popcorns sont transférés de la zone 4 à la zone 5 à l'aide d'un tapis roulant. Ce système assure un déplacement continu grâce à une rampe d'accès inclinée. </p>
+            <p><strong> (2) Stockage temporaire :</strong> Une fois en haut, les popcorns sont dirigés vers un entonnoir servant de zone de stockage temporaire. Cet entonnoir, situé au-dessus de la machine, permet de conserver une quantité précise de popcorns avant leur mise en sac.</p>
             <p><strong> (3) Gestion du flux avec un piston pneumatique :</strong> Lorsqu'une quantité suffisante de popcorns est atteinte, un piston pneumatique (au centre de la machine) ouvre une trappe, permettant aux popcorns de tomber dans un sac en plastique en dessous. Le piston est automatiquement contrôlé pour réguler le flux et éviter tout débordement.</p>
             <p><strong> (4) Fermeture du sac en plastique :</strong> Après le scellage, il suffit de prendre le sac rempli à la fin du processus. Il est alors prêt à être emballé ou expédié.</p>
             <p><strong> (5) Récupération du sac :</strong> Après le scellage, il suffit de prendre le sac rempli à la fin du processus. Il est alors prêt pour l'emballage ou l'expédition.</p>
+            <!-- Ajout de l'image avec réduction de la taille à 30% -->
+            <img src="https://raw.githubusercontent.com/TheNextStep78/Zone-5-UniLaSalle/main/image%20zone%205.jpg" alt="Image Zone 5" id="zone5Image" style="width: 30%;">
         </section>
         <section id="testSection" class="hidden">
             <h2>À propos</h2>
@@ -104,7 +106,7 @@
         });
 
         document.getElementById('schemaButton').addEventListener('click', function() {
-            const schemaUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FSch%25C3%25A9ma%2520%25C3%25A9lectrique%252F";
+            const schemaUrl = "https://172.16.0.230:60443/index.cgi?launchApp=SYNO.SDS.App.FileStation3.Instance&launchParam=openfile%3D%252FI5PAUC_FISE_PRO_2024_2025%252FModule_Usine_Connect%25C3%25A9e%252FGroupes%252FZ5%252FSch%25C3%25A9mas%2520%25C3%25A9lectriques%252F";
             window.open(schemaUrl, '_blank');
         });
 
